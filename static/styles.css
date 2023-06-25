@@ -1,0 +1,239 @@
+body {
+    color: black;
+    background-image: url('../static/background2.jpg');
+    background-size: cover;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    padding-top: 1%;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.navbar-custom {
+    align-items: end;
+    font-family: "Times New Roman", Times, serif;
+    color: whitesmoke;
+    background-color: black;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    font-size: x-large;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: black;
+}
+
+.navbar-nav li.nav-item a::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid whitesmoke;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    background-color: black;
+}
+
+.navbar-nav li.nav-item a:hover::after {
+    transform: scaleX(1);
+}
+
+.header-text {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    margin-top: 14%;
+    text-align: center;
+}
+
+.container {
+    padding: 10px 10%;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#about {
+    padding: 140px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 25px;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+    background-color: black;
+}
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-links:hover::after {
+    transform: scaleX(1);
+}
+
+.tab-contents ul {
+    padding: 0;
+    margin: 0;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    color: rgb(113, 113, 121);
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.tab-contents ul li span {
+    font-size: 25px;
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.tab-contents.skills {
+    display: block;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+#skillset{
+    padding: 100px 0;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.skillset-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 120px;
+    list-style: none;
+    padding: 5%;
+}
+
+.skillset-list li {
+    text-align: center;
+}
+
+.skillset-list li img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.skillset-list li span {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left i{
+    margin-right: 15px;
+    font-size: 30px;
+    color: black;
+}
+.social-icons{
+    margin-top:30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 15px;
+    display: inline-block;
+    color: black;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: rgb(113, 113, 121);
+    transform:translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    font-size: 20px;
+    color: #262625;
+}
+
+.contact-right form{
+    width:100%;
+    color: black;
+}
+form input,form textarea{
+    width:100%;
+    border:0;
+    outline: none;
+    background: #262625;
+    padding:15px;
+    margin:15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+#msg{
+    color:#61b752;
+    margin-top: 10px;
+    display: block;
+}
+

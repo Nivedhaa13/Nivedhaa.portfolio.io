@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ce7bb6f6c7.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <h1><b><ul>Nivedhaa</ul></h1></b>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#Home" style="color: whitesmoke;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" style="color: whitesmoke;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skillset" style="color: whitesmoke;">Skillset</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: whitesmoke;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="Home">
+        <div class="header-text">
+            Web Developer<br>
+            Located in Chennai
+        </div>
+    </div>
+    <br><br>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="../static/NIvedhaa.jpg" height="500" alt="Nivedhaa">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <p></p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web App Interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019-2022</span><br>Bsc Physics</li>
+                            <li><span>2021-2024</span><br>Bs Data Science</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="skillset">Skillset
+            <ul class="skillset-list">
+                <li>
+                    <img src="../static/python.png" alt="" height="100">
+                    <span>Python</span>
+                </li>
+                <li>
+                    <img src="../static/JAVA.png" alt="" height="100">
+                    <span>Java</span>
+                </li>
+                <li>
+                    <img src="../static/SQL.jpg" alt="" height="100">
+                    <span>SQL</span>
+                </li>
+            </ul>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h2 class="sub-title">Contact Me</h2>
+                    <p><i class="fa-sharp fa-solid fa-paper-plane"></i><b>contact@example.com</p></b>
+                    <p><i class="fa-sharp fa-solid fa-phone"></i><b>0123456789</p></b>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/nivedhaa-srikanth-3a5b53158/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2"> Submit </button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for (tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+   
+      
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbws2KyIbUnWWc5BI44Ied20jic1-_wsSOex5QjVKdehD0xJFS-HweQGuvwiW1PvIN3z/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
+
